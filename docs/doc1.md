@@ -6,7 +6,7 @@ sidebar_label: Style Guide
 ---
 ## Firebase Custom Event Entegrasyon Dökümanı
 
-iOS - Swift
+### iOS - Swift
 Aşağıda örnek bir booking event gönderimi verilmiştir.
 
 NOT: Swift, Web Analytics ekibimizin mevcut toolkiti dahilinde değildir. Bu sebeple  as NSObject kısımları ve veri tiplerinde çeşitli sorunlar yaşanabilir.
@@ -38,46 +38,21 @@ Analytics.logEvent("booking", parameters: [
 
 Kaynak: Event kurulumları ile ilgili Google’ın dokümantasyonuna buradan ulaşabilirsiniz.
 
-```python
-s = "Python syntax highlighting"
-print(s)
-```
 
-    No language indicated, so no syntax highlighting.
-    But let's throw in a <b>tag</b>.
-
-```js {2}
-function highlightMe() {
-  console.log('This line can be highlighted!');
-}
-```
-
-| App Eventleri (İsimlendirmeler Case Sensitive’dir.) | Tetiklenecekleri Adımlar | Parametreler (İsimlendirmeler Case Sensitive’dir.) |
-| --- | --- | --- |
-| VIEW_MAIN_LIST | Listelerim sekmesinde  Listelerin görüntülenmesi. (Çeyiz Listesi, Balayı Listesi vs.) |  |
-
-<br>     | USER_ID: MÜŞTERİ ID,
-
-[SCREEN_NAME](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Param#SCREEN_NAME): BULUNDUĞU LİSTE ADI
+`SCREEN_NAME`: BULUNDUĞU LİSTE ADI
 
 `ITEMS:` \[{NAME: LİSTE SAYFASINDA BULUNAN KATEGORİNİN ADI (YATAK ODASI, MUTFAK VS.)
 
-`ITEM\_ID`: KATEGORİ ID,
+`ITEM_ID`: KATEGORİ ID
 
-ITEM_CATEGORY: BULUNDUĞU LİSTE ADI (ÖRNEĞİN: ÇEYİZ LİSTESİ, BALAYI LİSTESİ VS.),
-
-[VALUE](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Param#VALUE): ÜRÜN EKLENDİKTEN SONRA GÖNDERİLEN DEĞER (Yatak Odası  0/3 BURADA BULUNAN KESİRLİ DEĞER)
-
-             }\] |
-
-| SELECT_MAIN_LIST                                  | Listelerim sekmesinde  görüntülenen kategorilerden birinin seçilmesi. (Yatak Odası, Mutfak vs.) | USER_ID: MÜŞTERİ ID,
-
-ITEMS: \[{NAME: LİSTE SAYFASINDA BULUNAN ALT KATEGORİNİN ADI (YATAK ODASI, MUTFAK VS.)
-
-ITEM_ID: ALT KATEGORİ ID,
-
-ITEM_CATEGORY: BULUNDUĞU LİSTE ADI (ÖRNEĞİN: ÇEYİZ LİSTESİ, BALAYI LİSTESİ VS.),
-
-[VALUE](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Param#VALUE): ÜRÜN EKLENDİKTEN SONRA GÖNDERİLEN DEĞER (Yatak Odası  0/3 BURADA BULUNAN KESİRLİ DEĞER)
-
-             }\] 
+    | App Eventleri (İsimlendirmeler Case Sensitive’dir.)        |      Tetiklenecekleri Adımlar      |   Parametreler (İsimlendirmeler Case Sensitive’dir.) |
+    | ------------- | :-----------: | -----: |
+    | `VIEW_MAIN_LIST`     | Listelerim sekmesinde  Listelerin görüntülenmesi. (Çeyiz Listesi, Balayı Listesi vs.) | `USER_ID: MÜŞTERİ ID,
+SCREEN_NAME: BULUNDUĞU LİSTE ADI
+ITEMS: [{NAME: LİSTE SAYFASINDA BULUNAN KATEGORİNİN ADI (YATAK ODASI, MUTFAK VS.)
+                ITEM_ID: KATEGORİ ID,
+                ITEM_CATEGORY: BULUNDUĞU LİSTE ADI (ÖRNEĞİN: ÇEYİZ LİSTESİ, BALAYI LİSTESİ VS.),
+              VALUE: ÜRÜN EKLENDİKTEN SONRA GÖNDERİLEN DEĞER (Yatak Odası  0/3 BURADA BULUNAN KESİRLİ DEĞER)
+             }]`
+ |
+ 
