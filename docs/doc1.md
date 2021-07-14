@@ -1,112 +1,243 @@
 ---
-slug: /
+slug: "/"
 title: Style Guide
 sidebar_label: Style Guide
----
-
-You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
-
-## Markdown Syntax
-
-To serve as an example page when styling markdown based Docusaurus sites.
-
-## Headers
-
-# H1 - Create the best documentation
-
-## H2 - Create the best documentation
-
-### H3 - Create the best documentation
-
-#### H4 - Create the best documentation
-
-##### H5 - Create the best documentation
-
-###### H6 - Create the best documentation
 
 ---
 
-## Emphasis
 
-Emphasis, aka italics, with *asterisks* or _underscores_.
 
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
 
-Combined emphasis with **asterisks and _underscores_**.
 
-Strikethrough uses two tildes. ~~Scratch this.~~
 
----
 
-## Lists
 
-1. First ordered list item
-1. Another item
-   - Unordered sub-list.
-1. Actual numbers don't matter, just that it's a number
-   1. Ordered sub-list
-1. And another item.
+Firebase Custom Event Entegrasyon Dökümanı
+Android | iOS
 
-* Unordered list can use asterisks
 
-- Or minuses
 
-+ Or pluses
 
----
 
-## Links
 
-[I'm an inline-style link](https://www.google.com/)
 
-[I'm an inline-style link with title](https://www.google.com/ "Google's Homepage")
 
-[I'm a reference-style link][arbitrary case-insensitive reference text]
 
-[I'm a relative reference to a repository file](../../master/LICENSE)
+Firebase Custom Event İmplementasyonu
+Firebase herhangi bir kurulum gerektirmeden uygulama indirmeleri, sürüm güncellemeleri, OS güncellemeleri gibi eventleri otomatik olarak takip etmektedir. Bu eventlerin bir listesine buradan ulaşabilirsiniz. Kurulumunu gerekli gördüğümüz eventlerin gönderimine dair bilgiler parametrelerin uygun veri tipleriyle birlikte aşağıdaki tabloda verilmiştir. Veri tipi belirtilmeyen parametreleri STRING veri tipinde gönderiniz. Tarih gönderim formatları (START_DATE ve END_DATE değişkenleri) yyyy-mm-dd (yıl-ay-gün) şeklindedir. USER_ID değişkeni giriş yapmış olan kullanıcılarda member ID olarak gönderilmelidir.
+Sign up
+Login
+Listelerim Kısmı
+VIEW_MAIN_LIST (Ana kategorilerin görüntülenmesi
+SELECT_MAIN_LIST (Ana kategorilerin seçilmesi
+VIEW_ITEM_LIST (Ana kategoriye tıklanıp gidilen ürün listesindeki ürünlerin görüntülenmesi
+SELECT_ITEM (Listedeki ürünlere tıklanılması
+VIEW_ITEM (Tıklanılan ürünlerin görüntülenmesi
+ADD_TO_CART (Görüntülenen ürünün sepete eklenmesi
+Etkinliklerim Kısmı
+VIEW_SOCIAL_EVENTS (Etkinliklerim kısmına gidilmesi)
+SELECT_SOCIAL_EVENTS (Etkinliklerden bir tanesinin seçilmesi)
+SELECT_RECCOMENDATIONS (Önerilerden birine tıklanması)
+SELECT_DETAILS (Mekan detayları girildiğinde ve güncelleye tıklandığında)
+Kuponlarım Kısmı
+VIEW_COUPONS (Kuponlarım kısmının görüntülenmesi)
+SELECT_COUPONS (Kupon tıklamaları)
+Raporlarım Kısmı
+VIEW_REPORTS (Raporlar kısmının görüntülenmesi)
+SELECT_REPORTS (Bir rapor kategorisinin seçilmesi)
 
-[You can use numbers for reference-style link definitions][1]
+App Eventleri (İsimlendirmeler Case Sensitive’dir.)
+Tetiklenecekleri Adımlar
+Parametreler (İsimlendirmeler Case Sensitive’dir.)
+VIEW_MAIN_LIST
+Listelerim sekmesinde  Listelerin görüntülenmesi. (Çeyiz Listesi, Balayı Listesi vs.)
 
-Or leave it empty and use the [link text itself].
 
-URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com/ or <http://www.example.com/> and sometimes example.com (but not on GitHub, for example).
+USER_ID: MÜŞTERİ ID,
+SCREEN_NAME: BULUNDUĞU LİSTE ADI
+ITEMS: [{NAME: LİSTE SAYFASINDA BULUNAN KATEGORİNİN ADI (YATAK ODASI, MUTFAK VS.)
+                ITEM_ID: KATEGORİ ID,
+                ITEM_CATEGORY: BULUNDUĞU LİSTE ADI (ÖRNEĞİN: ÇEYİZ LİSTESİ, BALAYI LİSTESİ VS.),
+              VALUE: ÜRÜN EKLENDİKTEN SONRA GÖNDERİLEN DEĞER (Yatak Odası  0/3 BURADA BULUNAN KESİRLİ DEĞER)
+             }]
+SELECT_MAIN_LIST
+Listelerim sekmesinde  görüntülenen kategorilerden birinin seçilmesi. (Yatak Odası, Mutfak vs.)
+USER_ID: MÜŞTERİ ID,
+ITEMS: [{NAME: LİSTE SAYFASINDA BULUNAN ALT KATEGORİNİN ADI (YATAK ODASI, MUTFAK VS.)
+                ITEM_ID: ALT KATEGORİ ID,
+                ITEM_CATEGORY: BULUNDUĞU LİSTE ADI (ÖRNEĞİN: ÇEYİZ LİSTESİ, BALAYI LİSTESİ VS.),
+              VALUE: ÜRÜN EKLENDİKTEN SONRA GÖNDERİLEN DEĞER (Yatak Odası  0/3 BURADA BULUNAN KESİRLİ DEĞER)
+             }]
+VIEW_ITEM_LIST
+Seçilen kategorilerin içerisinde yer alan ürün kategorilerinin listelenmesi. (Komodin, Makyaj Masası vs.)
+USER_ID: MÜŞTERİ ID,
+SEARCH_TERM: LİSTEDE ARA (INPUT TERM)
+ITEMS: [{NAME: ÜRÜN KATEGORİSİ (KOMODİN, MAKYAJ MASASI VS:)
+                ITEM_ID: ÜRÜN KATEGORİ ID,
+                ITEM_CATEGORY: BULUNDUĞU ALT KATEGORİ ADI (ÖRNEĞİN: YATAK ODASI, MUTFAK vs.),
+              VALUE: ADET MİKTARI
+             }]
+SELECT_ITEM
+Ürün kategorilerinden birinin seçilmesi.
+USER_ID: MÜŞTERİ ID,
+ITEMS: [{NAME: ÜRÜN KATEGORİSİ (KOMODİN, MAKYAJ MASASI VS:)
+                ITEM_ID: ÜRÜN KATEGORİ ID,
+                ITEM_CATEGORY: BULUNDUĞU ALT KATEGORİ ADI (ÖRNEĞİN: YATAK ODASI, MUTFAK vs.),
+              VALUE: ADET MİKTARI
+             }]
+VIEW_ITEM
+Ürünün görüntülenmesi. Örneğin; Komodin ürününün görüntülenmesi.
+USER_ID: MÜŞTERİ ID,
+ITEMS: [{NAME: ÜRÜN KATEGORİSİ (KOMODİN, MAKYAJ MASASI VS:)
+                ITEM_ID: ÜRÜN KATEGORİ ID,
+                ITEM_CATEGORY: BULUNDUĞU ALT KATEGORİ ADI (ÖRNEĞİN: YATAK ODASI, MUTFAK vs.),
+              PRICE_MIN: EN DÜŞÜK,
+               PRICE_MAX: EN YÜKSEK
+             }]
+ADD_TO_CART
+Görüntülenen ürünün eklenmesi
+USER_ID: MÜŞTERİ ID,
+ITEMS: [{NAME: ÜRÜN KATEGORİSİ (KOMODİN, MAKYAJ MASASI VS:)
+                ITEM_ID: ÜRÜN KATEGORİ ID,
+                ITEM_CATEGORY: BULUNDUĞU ALT KATEGORİ ADI (ÖRNEĞİN: YATAK ODASI, MUTFAK vs.),
+              PRICE_MIN: EN DÜŞÜK,
+               PRICE_MAX: EN YÜKSEK
+             }]
+VIEW_SOCIAL_EVENTS
+Etkinliklerim  
 
-Some text to show that the reference links can follow later.
 
-[arbitrary case-insensitive reference text]: https://www.mozilla.org/
-[1]: http://slashdot.org/
-[link text itself]: http://www.reddit.com/
+SELECT_SOCIAL_EVENTS
 
----
 
-## Images
+Etkinliklerim kısmına gidilmesi
+SELECT_RECCOMENDATIONS
 
-Here's our logo (hover to see the title text):
 
-Inline-style: ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
 
-Reference-style: ![alt text][logo]
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 2'
+SELECT_DETAILS
 
----
 
-## Code
 
+
+VIEW_COUPONS
+
+
+
+
+LOGIN
+Giriş
+USER_ID: MÜŞTERİ ID,
+METHOD: GİRİŞ YAPARKEN KULLANILAN YÖNTEM (FACEBOOK, EMAIL VB.)
+SIGN_UP
+Kayıt olma
+USER_ID: MÜŞTERİ ID,
+METHOD: KAYIT OLUNURKEN KULLANILAN YÖNTEM (FACEBOOK, EMAIL VB.)
+SELECT_COUPONS
+
+
+
+
+VIEW_REPORTS
+
+
+
+
+
+
+
+SELECT_REPORTS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Event Kurulum Syntax Örnekleri
+Android - Kotlin
+Aşağıda örnek bir booking event gönderimi verilmiştir. 
+
+NOT: Örnek gönderimde array içinde dictionary formatına uygun şekilde gönderilen ITEMS parametresini hashmap olarak (veya muadili olan uygun veri tipinde) gönderiniz. Dictionary formatı, variable key ve değerlerinin rahat okunabilirliğini sağladığı için kullanılmıştır.
+
+firebaseAnalytics.logEvent("booking") {
+    param("CURRENCY", "TRY") 
+    param("VALUE", 100.00) // Ciro, double veri tipinde
+    param("TRANSACTION_ID", "TRANSACTION123") // Sipariş IDsi
+    param("TAX", 18.00) // Vergi, double veri tipinde
+    param("USER_ID", "USER123") // Müşteri IDsi
+    param("START_DATE", "2021-04-21") // Rezervasyon başlangıç tarihi
+    param("END_DATE", "2021-04-23") // Rezervasyon bitiş tarihi
+    param("NUMBER_OF_NIGHTS", 2) // Rezervasyon gece sayısı, flat veri tipinde
+    param("NUMBER_OF_PASSENGERS", 1) // Rezervasyon müşteri sayısı, flat veri //tipinde
+    param("ITEMS", [{
+                      "NAME": "FOUR SEASONS ANTALYA HOTEL", // Otel/tur ismi
+                      "ITEM_ID": "OTEL123", // Otel/tur IDsi
+                      "PRICE": 100.00, // Otel/tur fiyatı, double veri tipinde
+			   "ITEM_BRAND": "FOUR SEASONS", // Otel/tur markası
+			   "ITEM_CATEGORY": "YURTİÇİ OTELLERİ", // Otel/tur //kategorisi
+                      "ITEM_CATEGORY2": "ŞEHİR OTELLERİ", // Otel/tur alt //kategorisi
+			   "LOCATION_ID": "KONUM123", // Otel/tur konum IDsi
+			   "LOCATION": "ANTALYA", // Otel/tur konum ismi
+		         "QUANTITY": 1 // Otel/tur adedi, flat veri tipinde, ASLA //null göndermeyiniz.
+                   }])
+}
+
+
+
+
+iOS - Swift
+Aşağıda örnek bir booking event gönderimi verilmiştir. 
+
+NOT: Swift, Web Analytics ekibimizin mevcut toolkiti dahilinde değildir. Bu sebeple  as NSObject kısımları ve veri tiplerinde çeşitli sorunlar yaşanabilir.
 ```javascript
-var s = 'JavaScript syntax highlighting';
-alert(s);
+Analytics.logEvent("booking", parameters: [
+    "CURRENCY": "TRY" as NSObject,
+    "VALUE": 100.00 as NSObject // Ciro, double veri tipinde
+    "TRANSACTION_ID": "TRANSACTION123" as NSObject, // Sipariş IDsi
+    "TAX": 18.00 as NSObject, // Vergi, double veri tipinde
+    "USER_ID": "USER123" as NSObject, // Müşteri IDsi
+    "START_DATE”: "2021-04-18" as NSObject, // Rezervasyon başlangıç tarihi
+    "END_DATE": "2021-04-20"as NSObject, // Rezervasyon bitiş tarihi
+    "NUMBER_OF_NIGHTS": 2 as NSObject, // Rezervasyon gece sayısı, flat veri //tipinde
+    "NUMBER_OF_PASSENGERS": 1 as NSObject, // Rezervasyon müşteri sayısı, flat //veri tipinde
+    "ITEMS": [[
+              "NAME": "FOUR SEASONS ANTALYA HOTEL" as NSObject, // Otel/tur //ismi
+              "ITEM_ID": "OTEL123" as NSObject, // Otel/tur IDsi
+              "PRICE": 100.00 as NSObject, // Otel/tur fiyatı, double veri //tipinde
+		  "ITEM_BRAND": "FOUR SEASONS" as NSObject, // Otel/tur markası
+		  "ITEM_CATEGORY": "YURTİÇİ OTELLERİ" as NSObject, // Otel/tur //kategorisi
+               "ITEM_CATEGORY2": "ŞEHİR OTELLERİ" as NSObject, // Otel/tur alt //kategorisi
+		  "LOCATION_ID": "KONUM123" as NSObject, // Otel/tur konum IDsi
+		  "LOCATION": "ANTALYA" as NSObject, // Otel/tur konum ismi
+		  "QUANTITY": 1 as NSObject// Otel/tur adedi, flat veri tipinde, //ASLA null göndermeyiniz.
+              ]]() as NSObject)
+])
 ```
+
+
+Kaynak: Event kurulumları ile ilgili Google’ın dokümantasyonuna buradan ulaşabilirsiniz.
+
 
 ```python
 s = "Python syntax highlighting"
 print(s)
 ```
 
-```
-No language indicated, so no syntax highlighting.
-But let's throw in a <b>tag</b>.
-```
+    No language indicated, so no syntax highlighting.
+    But let's throw in a <b>tag</b>.
 
 ```js {2}
 function highlightMe() {
@@ -114,87 +245,31 @@ function highlightMe() {
 }
 ```
 
----
+| App Eventleri (İsimlendirmeler Case Sensitive’dir.) | Tetiklenecekleri Adımlar                                                                        | Parametreler (İsimlendirmeler Case Sensitive’dir.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| --------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| VIEW\_MAIN\_LIST                                    | Listelerim sekmesinde  Listelerin görüntülenmesi. (Çeyiz Listesi, Balayı Listesi vs.)
 
-## Tables
+<br>     | USER\_ID: MÜŞTERİ ID,
 
-Colons can be used to align columns.
+[SCREEN\_NAME](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Param#SCREEN_NAME): BULUNDUĞU LİSTE ADI
 
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
+`ITEMS:` \[{NAME: LİSTE SAYFASINDA BULUNAN KATEGORİNİN ADI (YATAK ODASI, MUTFAK VS.)
 
-There must be at least 3 dashes separating each header cell. The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+`ITEM\_ID`: KATEGORİ ID,
 
-| Markdown | Less      | Pretty     |
-| -------- | --------- | ---------- |
-| _Still_  | `renders` | **nicely** |
-| 1        | 2         | 3          |
+ITEM\_CATEGORY: BULUNDUĞU LİSTE ADI (ÖRNEĞİN: ÇEYİZ LİSTESİ, BALAYI LİSTESİ VS.),
 
----
+[VALUE](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Param#VALUE): ÜRÜN EKLENDİKTEN SONRA GÖNDERİLEN DEĞER (Yatak Odası  0/3 BURADA BULUNAN KESİRLİ DEĞER)
 
-## Blockquotes
+             }\] |
+| SELECT\_MAIN\_LIST                                  | Listelerim sekmesinde  görüntülenen kategorilerden birinin seçilmesi. (Yatak Odası, Mutfak vs.) | USER\_ID: MÜŞTERİ ID,
 
-> Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.
+ITEMS: \[{NAME: LİSTE SAYFASINDA BULUNAN ALT KATEGORİNİN ADI (YATAK ODASI, MUTFAK VS.)
 
-Quote break.
+ITEM\_ID: ALT KATEGORİ ID,
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
+ITEM\_CATEGORY: BULUNDUĞU LİSTE ADI (ÖRNEĞİN: ÇEYİZ LİSTESİ, BALAYI LİSTESİ VS.),
 
----
+[VALUE](https://firebase.google.com/docs/reference/android/com/google/firebase/analytics/FirebaseAnalytics.Param#VALUE): ÜRÜN EKLENDİKTEN SONRA GÖNDERİLEN DEĞER (Yatak Odası  0/3 BURADA BULUNAN KESİRLİ DEĞER)
 
-## Inline HTML
-
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
----
-
-## Line Breaks
-
-Here's a line for us to start with.
-
-This line is separated from the one above by two newlines, so it will be a _separate paragraph_.
-
-This line is also a separate paragraph, but... This line is only separated by a single newline, so it's a separate line in the _same paragraph_.
-
----
-
-## Admonitions
-
-:::note
-
-This is a note
-
-:::
-
-:::tip
-
-This is a tip
-
-:::
-
-:::important
-
-This is important
-
-:::
-
-:::caution
-
-This is a caution
-
-:::
-
-:::warning
-
-This is a warning
-
-:::
+             }\] 
