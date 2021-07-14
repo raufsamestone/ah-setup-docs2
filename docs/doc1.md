@@ -45,6 +45,11 @@ Kaynak: Event kurulumları ile ilgili Google’ın dokümantasyonuna buradan ula
 
 `ITEM_ID`: KATEGORİ ID
 
-    | App Eventleri (İsimlendirmeler Case Sensitive’dir.)        |      Tetiklenecekleri Adımlar      |   Parametreler (İsimlendirmeler Case Sensitive’dir.) |
-    | ------------- | :-----------: | -----: |
-    | `VIEW_MAIN_LIST`     | Listelerim sekmesinde  Listelerin görüntülenmesi. (Çeyiz Listesi, Balayı Listesi vs.) | asdasd |
+--- 
+
+| App Eventleri (İsimlendirmeler Case Sensitive’dir.) |   Tetiklenecekleri Adımlar  | Parametreler (İsimlendirmeler Case Sensitive’dir.)  |
+| -------- | --------- | ---------- |
+| `VIEW_MAIN_LIST`  | Listelerim sekmesinde  Listelerin görüntülenmesi. (Çeyiz Listesi, Balayı Listesi vs.)  | **others** |
+| 1        | 2         | 3          |
+
+---
